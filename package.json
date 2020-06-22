@@ -1,0 +1,23 @@
+{
+  "name": "ussd_server",
+  "version": "1.0.0",
+  "description": "A sample USSD server tutorial with AfricasTaslking.com service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "USSD",
+    "NODE"
+  ],
+  "author": "Redi redidemisse22@gmail.com",
+  "license": "",
+  "dependencies": {
+    "africastalking": "^0.4.7",
+    "axios": "^0.19.2",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "request": "^2.88.2"
+  }
+}
