@@ -28,17 +28,18 @@ app.post("*", (req, res) => {
   let { sessionId, serviceCode, phoneNumber, text } = req.body;
   if (text == "") {
     console.log("object", statEth);
-    let response = `CON Choose the information you want 
-    1. Total Information
-    2. Today's Information`;
-    res.send(response);
-  } else if (text == "1" || text == "2") {
     let response = `CON Choose the range of the news you would like to know:
     1. Ethiopia
     2. World
    `;
+
     res.send(response);
-  } else if (text == "1*1" || text == "1*2" || text == "2*1" || text == "2*2") {
+  } else if (text == "1") {
+    let response = `CON Choose the information you want 
+    1. Total Information
+    2. Today's Information`;
+    res.send(response);
+  } else if (text == "1*1" || text == "1*2" || text == "2") {
     let response = `CON Choose the type of information:
     1.Number of Cases
     2.Number of Deaths
@@ -60,19 +61,34 @@ app.post("*", (req, res) => {
     let response = `END The total recoveries in Ethiopia ${statEth.total_recovered}
     `;
     res.send(response);
-  } else if (text == "2*1*1") {
+  } else if (text == "1*2*1") {
     console.log("objectsds", statEth.body);
     let response = `END The new cases in Ethiopia today: ${statEth.new_case}
     `;
     res.send(response);
-  } else if (text == "2*1*2") {
+  } else if (text == "1*2*2") {
     console.log("objectsds", statEth);
     let response = `END The new deaths in Ethiopia today: ${statEth.new_death}
     `;
     res.send(response);
-  } else if (text == "2*1*3") {
+  } else if (text == "1*2*3") {
     console.log("objectsds", statEth);
     let response = `END The new recoveries in Ethiopia today: ${statEth.total_recovered}
+    `;
+    res.send(response);
+  } else if (text == "2*1") {
+    console.log("objectsds", statEth.body);
+    let response = `END The new cases in World today: ${statWorld.total_case}
+    `;
+    res.send(response);
+  } else if (text == "2*2") {
+    console.log("objectsds", statEth);
+    let response = `END The new deaths in world today: ${statWorld.total_death}
+    `;
+    res.send(response);
+  } else if (text == "1*2*3") {
+    console.log("objectsds", statEth);
+    let response = `END The new recoveries in World today: ${statWorld.total_recovered}
     `;
     res.send(response);
   } else {
